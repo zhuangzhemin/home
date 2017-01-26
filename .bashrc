@@ -28,6 +28,6 @@ alias vps="ssh zhemin@45.63.50.237"
 alias mrw="mount -o remount,rw /system"
 alias mro="mount -o remount,ro /system"
 
-export ROOT_HOME="$HOME/root"
+export ROOT_HOME="/data/data/jackpal.androidterm/files/home/root"
 export ROOT_SHELL="$PREFIX/bin/bash"
 alias su="/su/bin/su -c \"HOME=$ROOT_HOME $ROOT_SHELL\" --login"
