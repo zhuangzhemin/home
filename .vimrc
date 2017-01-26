@@ -115,7 +115,7 @@
     if has("multi_byte")
         set encoding=utf-8
         "language english
-        language messages zh_CN.utf-8
+        "language messages zh_CN.utf-8
         set fillchars+=stl:\ ,stlnc:\
 
         if WINDOWS()

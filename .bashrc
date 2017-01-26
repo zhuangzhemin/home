@@ -1,20 +1,33 @@
-# .bashrc
+#!/system/bin/sh
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-# User specific aliases and functions
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+export PS1="[\u:\w]\$"
 
-alias vi='gvim'
-alias ll='ls -lh'
+export PREFIX="/data/data/jackpal.androidterm/files/usr"
+export LD_LIBRARY_PATH="/data/data/jackpal.androidterm/files/usr/lib"
+export PATH="$PREFIX/bin:$PATH"
+export PATH="$PREFIX/bin/applets:$PATH"
+
+# some more ls aliases
+alias ll='ls -alh'
 alias la='ls -ah'
+alias du='du -h'
 
-alias ec='gvim ~/.bashrc'
-alias sc='source ~/.bashrc'
-stty -ixon
+alias gohome="cd /sdcard/home"
+alias gobin="cd $PREFIX/bin"
+alias vi="vim"
 
+alias ec="vim ~/.bashrc"
+alias sc="source ~/.bashrc"
+
+alias vps="ssh zhemin@45.63.50.237"
+
+alias mrw="mount -o remount,rw /system"
+alias mro="mount -o remount,ro /system"
+
+export ROOT_HOME="$HOME/root"
+export ROOT_SHELL="$PREFIX/bin/bash"
+alias su="/su/bin/su -c \"HOME=$ROOT_HOME $ROOT_SHELL\" --login"
