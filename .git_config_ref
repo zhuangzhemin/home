@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "vim"]
+	url = git@github.com:zhuangzhemin/vim.git
+	fetch = +refs/heads/*:refs/remotes/vim/*
+[branch "android"]
+	remote = vim
+	merge = refs/heads/android
