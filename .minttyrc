@@ -1,0 +1,13 @@
+BoldAsFont=-1
+Font=Source Code Pro
+FontHeight=11
+Locale=en_US
+Charset=UTF-8
+Columns=128
+Rows=40
+Language=en_US
+Term=xterm-256color
+CursorType=block
+ForegroundColour=131,148,150
+BackgroundColour=0,43,54
+ThemeFile=Solarized
