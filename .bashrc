@@ -19,11 +19,13 @@ alias du='du -h'
 alias gohome="cd /sdcard/home"
 alias gobin="cd $PREFIX/bin"
 alias vi="vim"
+alias yum="apt"
 
 alias ec="vim ~/.bashrc"
 alias sc="source ~/.bashrc"
 
 alias vps="ssh zhemin@45.63.50.237"
+alias vpsr="ssh root@45.63.50.237"
 
 alias mrw="mount -o remount,rw /system"
 alias mro="mount -o remount,ro /system"

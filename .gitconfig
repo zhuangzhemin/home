@@ -1,3 +1,14 @@
 [user]
 	name = zhuangzhemin
 	email = zhuangzhemin@qq.com
+[diff]
+	tool = vimdiff
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+	unstage = reset HEAD --
+	last = log -1 HEAD
