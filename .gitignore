@@ -3,3 +3,6 @@
 .viminfo
 .vimundo/
 .cache/
+.zcompdump-localhost-5.3
+.zsh-update
+.zsh_history
