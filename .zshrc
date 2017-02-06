@@ -98,3 +98,7 @@ stty -ixon
 alias yum="apt-cyg"
 alias sysupdate="/usr/bin/setup --no-desktop --no-shortcuts --no-startmenu --quiet-mode --upgrade-also --site http://mirrors.163.com/cygwin/"
 
+if [ -f ~/.local_path_alias.src ]; then
+    source ~/.local_path_alias.src
+fi
+
