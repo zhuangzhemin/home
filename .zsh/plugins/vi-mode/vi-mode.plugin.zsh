@@ -1,8 +1,12 @@
 # Updates editor information when the keymap changes.
-function zle-keymap-select() {
-  zle reset-prompt
-  zle -R
+function zle-line-init zle-keymap-select {
+    PROMPT='%{$fg[cyan]%}[%n:%~]$(git_prompt_info)$(vi_mode_prompt_info) '
+    zle reset-prompt
+    zle -R
 }
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # Ensure that the prompt is redrawn when the terminal size changes.
 TRAPWINCH() {
@@ -35,16 +39,18 @@ bindkey '^r' history-incremental-search-backward
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
-# if mode indicator wasn't setup by theme, define default
-if [[ "$MODE_INDICATOR" == "" ]]; then
-  MODE_INDICATOR="%{$fg_bold[red]%}<%{$fg[red]%}<<%{$reset_color%}"
-fi
-
 function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
+  CMD_MODE_INDICATOR="%{$fg_bold[red]%}%#%{$reset_color%}"
+  INS_MODE_INDICATOR="%{$fg_bold[green]%}%#%{$reset_color%}"
+  echo "${${KEYMAP/vicmd/$CMD_MODE_INDICATOR}/(main|viins)/$INS_MODE_INDICATOR}"
 }
 
-# define right prompt, if it wasn't defined by a theme
-if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
-  RPS1='$(vi_mode_prompt_info)'
-fi
+# Outputs current branch info in prompt format
+function git_prompt_info() {
+  local ref
+  ref=$(command git symbolic-ref HEAD 2> /dev/null) || return 0
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+}
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[blue]%})%{$reset_color%}"

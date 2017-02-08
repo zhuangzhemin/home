@@ -8,6 +8,7 @@
 	ci = commit
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	ls = ls-files
 [core]
 	editor = vim
 [diff]

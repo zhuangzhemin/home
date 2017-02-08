@@ -3,7 +3,8 @@
 
 # Set name of the theme to load.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME=
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -18,20 +19,20 @@ plugins=(vi-mode)
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
-for config_file (~/.zsh_plugins/lib/*.zsh); do
+for config_file (~/.zsh/lib/*.zsh); do
     source $config_file
 done
 
 # Load all of the plugins that were defined in ~/.zshrc
 for plugin ($plugins); do
-    if [ -f ~/.zsh_plugins/plugins/$plugin/$plugin.plugin.zsh ]; then
-        source ~/.zsh_plugins/plugins/$plugin/$plugin.plugin.zsh
+    if [ -f ~/.zsh/plugins/$plugin/$plugin.plugin.zsh ]; then
+        source ~/.zsh/plugins/$plugin/$plugin.plugin.zsh
     fi
 done
 
 if [ ! "$ZSH_THEME" = ""  ]; then
-    if [ -f ~/.zsh_plugins/themes/$ZSH_THEME.zsh-theme ]; then
-        source ~/.zsh_plugins/themes/$ZSH_THEME.zsh-theme
+    if [ -f ~/.zsh/themes/$ZSH_THEME.zsh-theme ]; then
+        source ~/.zsh/themes/$ZSH_THEME.zsh-theme
     fi
 fi
 
@@ -56,6 +57,9 @@ stty -ixon
 
 alias yum="apt-cyg"
 alias sysupdate="/usr/bin/setup --no-desktop --no-shortcuts --no-startmenu --quiet-mode --upgrade-also --site http://mirrors.163.com/cygwin/"
+
+alias ta="tmux attach"
+alias cls="clear"
 
 if [ -f ~/.local_path_alias.src ]; then
     source ~/.local_path_alias.src
