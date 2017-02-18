@@ -1,3 +1,21 @@
+# wrapper for chrome
+function chrome() {
+  emulate -L zsh
+
+  if [ -z "$*" ]; then
+      /usr/bin/chrome
+  else
+      for i in "$@"; do
+          if [ -e $i ]; then
+              /usr/bin/chrome $(cygpath -aw $i)
+          else
+              /usr/bin/chrome $i
+          fi
+      done
+  fi
+}
+
+
 # search google from terminal
 
 function google() {
@@ -17,7 +35,6 @@ function google() {
     url="${google_home_url}"
   fi
 
-  "/c/Program Files (x86)/Google/Chrome/Application/chrome.exe" "$url"
+  /usr/bin/chrome "$url"
 }
-
 

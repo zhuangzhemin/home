@@ -15,7 +15,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode google)
+plugins=(vi-mode winrun)
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
@@ -51,9 +51,16 @@ alias ll='ls -AlhF --color=auto'
 alias llt='ls -AlhF -rt --color=auto'
 alias la='ls -ahF --color=auto'
 
+alias -s htm="chrome"
+alias -s html="chrome"
+
 alias ec='vim ~/.zshrc'
 alias sc='source ~/.zshrc'
 stty -ixon
+
+alias vps="ssh zhemin@45.63.50.237"
+alias vpsr="ssh root@45.63.50.237"
+alias android="ssh -p 8022 192.168.43.1"
 
 alias yum="apt-cyg"
 alias sysupdate="/usr/bin/setup --no-desktop --no-shortcuts --no-startmenu --quiet-mode --upgrade-also --site http://mirrors.163.com/cygwin/"

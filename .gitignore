@@ -8,3 +8,5 @@
 .local_path_alias.src
 .vimswap/
 .z
+.vim/.netrwhist
+test/
