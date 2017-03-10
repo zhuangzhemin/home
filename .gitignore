@@ -6,3 +6,7 @@
 .zcompdump-localhost-5.3
 .zsh-update
 .zsh_history
+root/
+storage/
+.vim/.netrwhist
+.termux/

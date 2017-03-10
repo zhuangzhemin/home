@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/sh
+# sudo for Termux
+# For security reasons some environent variables are reset by su
+# So we need to set LD_LIBRARY_PATH
+# Root's HOME is set to 'termux's home/.suroot'.
+# Startup files and other stuffs can be added there.
+ROOT_HOME=$HOME/root
+case "$1" in  
+  ''|'--help')    
+    echo 'Sets up environment to allow termux programs to run with root access'    
+    echo 'Not the sudo as found in other *nixes'    
+    echo    
+    echo 'Usage: sudo cmd [args]'    
+    echo 'cmd : Run termux program with args as root.'
+;;
+  *)
+    exec su -c "LD_LIBRARY_PATH=$PREFIX/lib HOME=$ROOT_HOME ${@}";
+;;
+esac
