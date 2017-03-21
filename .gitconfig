@@ -1,0 +1,15 @@
+[user]
+	name = zhuangzhemin
+	email = zhuangzhemin@qq.com
+[alias]
+	st = status
+	br = branch
+	co = checkout
+	ci = commit
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	ls = ls-files
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
