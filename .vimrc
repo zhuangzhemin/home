@@ -107,7 +107,7 @@
     " settings for encoding
     set encoding=utf-8
     "set fileencoding=utf-8
-    set fileformats=dos,unix
+    set fileformats=unix,dos
     set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,bgk,euc-jp,euc-kr,latin1
     set termencoding=utf-8
     "set fileformats=unix
