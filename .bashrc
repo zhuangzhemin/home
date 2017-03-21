@@ -11,10 +11,10 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias vi='gvim'
-alias ll='ls -lh'
-alias la='ls -ah'
+alias ll='ls -alh'
+alias la='ls -Ah'
 
-alias ec='gvim ~/.bashrc'
+alias ec='vim ~/.bashrc'
 alias sc='source ~/.bashrc'
 stty -ixon
 
