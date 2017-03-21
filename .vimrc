@@ -107,7 +107,7 @@
     " settings for encoding
     set encoding=utf-8
     "set fileencoding=utf-8
-    set fileformats=dos,unix
+    set fileformats=unix,dos
     set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,bgk,euc-jp,euc-kr,latin1
     set termencoding=utf-8
     "set fileformats=unix
@@ -512,8 +512,8 @@
 " Key (re)Mappings for Zhemin {{{
     "noremap <tab> za
     noremap <leader>x q:
-    nnoremap <leader>v V`]
-    nnoremap <leader>v :Ve!<CR>
+    nnoremap <leader>ve :Ve!<CR>
+    nnoremap <leader>vd :vertial diffsplit 
     nnoremap <leader>d :'a,'bd<ESC>
     nnoremap <leader>c <ESC>'av'b$y<ESC>
     nnoremap <leader>bs :browse saveas<CR>

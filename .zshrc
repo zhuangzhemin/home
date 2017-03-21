@@ -50,6 +50,7 @@ alias ls='ls -hF --color=auto'                 # classify files in colour
 alias ll='ls -AlhF --color=auto'
 alias llt='ls -AlhF -rt --color=auto'
 alias la='ls -ahF --color=auto'
+alias du='du -h'
 
 alias -s htm="chrome"
 alias -s html="chrome"
@@ -58,8 +59,7 @@ alias ec='vim ~/.zshrc'
 alias sc='source ~/.zshrc'
 stty -ixon
 
-alias vps="ssh zhemin@45.63.50.237"
-alias vpsr="ssh root@45.63.50.237"
+alias vps="ssh root@104.207.152.19"
 alias android="ssh -p 8022 192.168.43.1"
 
 alias yum="apt-cyg"
