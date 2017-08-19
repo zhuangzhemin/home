@@ -76,9 +76,5 @@ alias vps="ssh root@104.207.152.19"
 alias mrw="mount -o remount,rw /system"
 alias mro="mount -o remount,ro /system"
 
-export ROOT_HOME="/data/data/com.termux/files/home/root"
-export ROOT_SHELL="$PREFIX/bin/zsh"
-alias su="/su/bin/su -c \"HOME=$ROOT_HOME $ROOT_SHELL\" --login"
-
 alias cs="cd"
 alias wifi="sudo cat /data/misc/wifi/wpa_supplicant.conf"

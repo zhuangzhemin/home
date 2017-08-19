@@ -1,15 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-show_usage() {
-	echo -e "\nUsage:"
-	echo 'sudo <command> [<args>]'
-	echo -e "  Run command as root with optional arguments\n"
-	exit
-}
-
 SYSBIN=/system/bin
 SYSXBIN=/system/xbin
-BB=$SYSXBIN/busybox
 PRE=/data/data/com.termux/files
 ROOT_HOME=$PRE/home/root
 BINPRE=$PRE/usr/bin
@@ -23,8 +15,8 @@ elif [ -x /su/bin/su ]; then
 elif [ -x /sbin/su ]; then
 	SU=/sbin/su
 else
-	echo -e "\nsu executable not found"
-	echo -e "sudo requires su\n"
+	echo "\nsu executable not found"
+	echo "sudo requires su\n"
 	exit
 fi
 
@@ -35,16 +27,7 @@ fi
 
 ARGS=$(printf '%q ' "$@")
 
-if [ -z "$*" ]; then
-	show_usage
-elif [ -x "$BINPRE/$1" ]; then
-	CMDLINE="$CMDLINE;$BINPRE/$ARGS"
-elif [ -x $SYSBIN/$1 ] || [ -x $SYSXBIN/$1 ] || [ -x $1 ]; then
-	CMDLINE="$CMDLINE;$ARGS"
-else
-	echo -e "\nCommand not found: $1"
-	echo -e "Check your spelling and try again\n"
-fi
+CMDLINE="$CMDLINE;$BINPRE/zsh"
 
 pre_env_chk=`$SU --help|grep -e --preserve-environment`
 if [ -n "$pre_env_chk" ]; then
