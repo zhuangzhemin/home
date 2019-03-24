@@ -92,8 +92,8 @@
     filetype plugin indent on   " Automatically detect file types.
     syntax enable               " Syntax highlighting
     syntax on                   " Syntax highlighting
-    "set mouse=a                 " Automatically enable mouse usage
-    "set mousehide               " Hide the mouse cursor while typing
+    set mouse=a                 " Automatically enable mouse usage
+    set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
 
     set selection=inclusive
@@ -106,16 +106,17 @@
 
     " settings for encoding
     set encoding=utf-8
-    "set fileencoding=utf-8
+    set fileencoding=utf-8
     set fileformats=unix,dos
-    set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,bgk,euc-jp,euc-kr,latin1
+    set fileencodings=utf-8,chinese,ucs-bom,cp936,gb18030,big5,bgk,euc-jp,euc-kr,latin1
     set termencoding=utf-8
     "set fileformats=unix
 
     if has("multi_byte")
         set encoding=utf-8
+        set fileencoding=chinese
         "language english
-        "language messages zh_CN.utf-8
+        language messages zh_CN.utf-8
         set fillchars+=stl:\ ,stlnc:\
 
         if WINDOWS()
@@ -130,6 +131,12 @@
         endif
 
         set helplang=cn
+    endif
+
+    if WINDOWS()
+        " fix incorrect menu in windows
+        source $VIMRUNTIME/delmenu.vim
+        source $VIMRUNTIME/menu.vim
     endif
 
     if has('clipboard')
