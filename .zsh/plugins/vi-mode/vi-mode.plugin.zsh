@@ -1,6 +1,6 @@
 # Updates editor information when the keymap changes.
 function zle-line-init zle-keymap-select {
-    PROMPT='%{$fg[cyan]%}[%n:%~]$(git_prompt_info)$(vi_mode_prompt_info) '
+    PROMPT='%{$fg[cyan]%}[%n@%m:%~](%D %T)$(git_prompt_info)$(vi_mode_prompt_info) '
     zle reset-prompt
     zle -R
 }
