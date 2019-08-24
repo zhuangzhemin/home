@@ -59,7 +59,7 @@ alias ec='vim ~/.zshrc'
 alias sc='source ~/.zshrc'
 stty -ixon
 
-alias vps="ssh root@104.207.152.19"
+alias vps="ssh root@67.230.184.185"
 alias android="ssh -p 8022 192.168.43.1"
 
 alias ta='tmux attach'
@@ -70,7 +70,7 @@ alias tkss='tmux kill-session -t'
 
 alias cls="clear"
 
-if [ -f ~/.local_path_alias.src ]; then
-    source ~/.local_path_alias.src
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
 fi
 

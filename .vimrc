@@ -116,7 +116,7 @@
         set encoding=utf-8
         set fileencoding=chinese
         "language english
-        language messages zh_CN.utf-8
+        "language messages zh_CN.utf-8
         set fillchars+=stl:\ ,stlnc:\
 
         if WINDOWS()
@@ -152,7 +152,7 @@
     " your .vimrc.before.local file:
     "   let g:spf13_no_autochdir = 1
     if !exists('g:spf13_no_autochdir')
-        autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+        autocmd BufEnter * if (bufname("") !~ "^\[A-Za-z0-9\]*://") && (&buftype !=# 'terminal') | lcd %:p:h | endif
         " Always switch to the current file directory
     endif
 
@@ -617,17 +617,17 @@
         set lines=40                " 40 lines of text instead of 24
         if !exists("g:spf13_no_big_font")
             if LINUX() && has("gui_running")
-                set guifont=Source\ Code\ Pro\ Regular\ 12,Courier\ New\ Regular\ 12
-                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 12
-                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 12
+                set guifont=Source\ Code\ Pro\ Regular\ 14,Courier\ New\ Regular\ 14
+                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 14
+                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 14
             elseif OSX() && has("gui_running")
-                set guifont=Source\ Code\ Pro\ Regular\ 12,Courier\ New\ Regular\ 12
-                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 12
-                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 12
+                set guifont=Source\ Code\ Pro\ Regular\ 14,Courier\ New\ Regular\ 14
+                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 14
+                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 14
             elseif WINDOWS() && has("gui_running")
-                set guifont=Source_Code_Pro:h12,Consolas:h12,Courier_New:h12
-                set guifontwide=SimHei:h12
-                "set guifontwide=Noto_Sans_Mono_CJK_SC:h12,SimHei:h12
+                set guifont=Source_Code_Pro:h14,Consolas:h14,Courier_New:h14
+                set guifontwide=SimHei:h14
+                "set guifontwide=Noto_Sans_Mono_CJK_SC:h14,SimHei:h14
             endif
         endif
     else
