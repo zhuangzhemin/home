@@ -15,7 +15,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode winrun)
+plugins=(vi-mode winrun z zsh-autosuggestions)
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
@@ -38,6 +38,8 @@ fi
 
 # User configuration
 
+bindkey "," autosuggest-accept
+
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
@@ -48,7 +50,7 @@ alias md='mkdir -p'
 alias vi='vim'
 alias ls='ls -hF --color=auto'                 # classify files in colour
 alias ll='ls -alhF --color=auto'
-alias llt='ls -alhF -rt --color=auto'
+alias llt='ls -lhF -rt --color=auto'
 alias la='ls -AhF --color=auto'
 alias du='du -h'
 
@@ -59,8 +61,9 @@ alias ec='vim ~/.zshrc'
 alias sc='source ~/.zshrc'
 stty -ixon
 
-alias vps="ssh root@67.230.184.185"
-alias android="ssh -p 8022 192.168.43.1"
+alias vps="ssh root@67.230.184.8"
+alias ali="ssh root@47.74.176.160"
+alias android="ssh -p 8022 192.168.43.83"
 
 alias ta='tmux attach'
 alias ts='tmux new-session -s'
@@ -74,3 +77,4 @@ if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
 
+export TERM=xterm-256color
