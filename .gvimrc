@@ -106,14 +106,15 @@
 
     " settings for encoding
     set encoding=utf-8
-    "set fileencoding=utf-8
+    set fileencoding=utf-8
     set fileformats=unix,dos
-    set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,bgk,euc-jp,euc-kr,latin1
+    set fileencodings=utf-8,chinese,ucs-bom,cp936,gb18030,big5,bgk,euc-jp,euc-kr,latin1
     set termencoding=utf-8
     "set fileformats=unix
 
     if has("multi_byte")
         set encoding=utf-8
+        set fileencoding=chinese
         "language english
         "language messages zh_CN.utf-8
         set fillchars+=stl:\ ,stlnc:\
@@ -122,7 +123,6 @@
             let &termencoding=&encoding
         endif
 
-        set fencs=utf-8,gbk,chinese,latin1
         set formatoptions+=mM
 
         if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
@@ -130,6 +130,12 @@
         endif
 
         set helplang=cn
+    endif
+
+    if WINDOWS()
+        " fix incorrect menu in windows
+        source $VIMRUNTIME/delmenu.vim
+        source $VIMRUNTIME/menu.vim
     endif
 
     if has('clipboard')
@@ -610,17 +616,17 @@
         set lines=40                " 40 lines of text instead of 24
         if !exists("g:spf13_no_big_font")
             if LINUX() && has("gui_running")
-                set guifont=Source\ Code\ Pro\ Regular\ 12,Courier\ New\ Regular\ 12
-                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 12
-                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 12
+                set guifont=Source\ Code\ Pro\ Regular\ 14,Courier\ New\ Regular\ 14
+                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 14
+                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 14
             elseif OSX() && has("gui_running")
-                set guifont=Source\ Code\ Pro\ Regular\ 12,Courier\ New\ Regular\ 12
-                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 12
-                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 12
+                set guifont=Source\ Code\ Pro\ Regular\ 14,Courier\ New\ Regular\ 14
+                set guifontwide=Source\ Han\ Sans\ HW\ SC\ 14
+                "set guifontwide=Noto\ Sans\ Mono\ CJK\ SC\ 14
             elseif WINDOWS() && has("gui_running")
-                set guifont=Source_Code_Pro:h12,Consolas:h12,Courier_New:h12
-                set guifontwide=SimHei:h12
-                "set guifontwide=Noto_Sans_Mono_CJK_SC:h12,SimHei:h12
+                set guifont=Source_Code_Pro:h14,Consolas:h14,Courier_New:h14
+                set guifontwide=SimHei:h14
+                "set guifontwide=Noto_Sans_Mono_CJK_SC:h14,SimHei:h14
             endif
         endif
     else

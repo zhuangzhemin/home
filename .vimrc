@@ -123,7 +123,6 @@
             let &termencoding=&encoding
         endif
 
-        set fencs=utf-8,gbk,chinese,latin1
         set formatoptions+=mM
 
         if v:lang =~? '^\(zh\)\|\(ja\)\|\(ko\)'
