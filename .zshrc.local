@@ -1,0 +1,20 @@
+
+#export PREFIX="/data/data/com.termux/files/usr"
+#export LD_LIBRARY_PATH="/data/data/com.termux/files/usr/lib"
+#export PATH="$PREFIX/bin:$PATH"
+#export PATH="$PREFIX/bin/applets:$PATH"
+
+alias gohome="cd /sdcard/home"
+alias gobin="cd $PREFIX/bin"
+alias vi="vim"
+alias yum="apt"
+alias cs="cd"
+
+alias mrw="mount -o remount,rw /system"
+alias mro="mount -o remount,ro /system"
+
+alias vps="ssh root@67.230.184.8"
+
+alias wifi="sudo cat /data/misc/wifi/wpa_supplicant.conf"
+alias frp="~/frp/frpc -c ~/frp/frpc.ini"
+

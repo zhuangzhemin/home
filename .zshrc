@@ -15,7 +15,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode)
+plugins=(vi-mode z zsh-autosuggestions)
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
@@ -38,12 +38,31 @@ fi
 
 # User configuration
 
+bindkey "," autosuggest-accept
+
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
 alias md='mkdir -p'
+
+alias vi='vim'
+alias ls='ls -hF --color=auto'                 # classify files in colour
+alias ll='ls -alhF --color=auto'
+alias llt='ls -lhF -rt --color=auto'
+alias la='ls -AhF --color=auto'
+alias du='du -h'
+
+alias -s htm="chrome"
+alias -s html="chrome"
+
+alias ec='vim ~/.zshrc'
+alias sc='source ~/.zshrc'
+stty -ixon
+
+alias vps="ssh root@67.230.184.8"
+alias android="ssh -p 8022 192.168.43.83"
 
 alias ta='tmux attach'
 alias ts='tmux new-session -s'
@@ -53,28 +72,8 @@ alias tkss='tmux kill-session -t'
 
 alias cls="clear"
 
-#export PREFIX="/data/data/com.termux/files/usr"
-#export LD_LIBRARY_PATH="/data/data/com.termux/files/usr/lib"
-#export PATH="$PREFIX/bin:$PATH"
-#export PATH="$PREFIX/bin/applets:$PATH"
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
 
-# some more ls aliases
-alias ll='ls -alh'
-alias la='ls -ah'
-alias du='du -h'
-
-alias gohome="cd /sdcard/home"
-alias gobin="cd $PREFIX/bin"
-alias vi="vim"
-alias yum="apt"
-
-alias ec="vim ~/.zshrc"
-alias sc="source ~/.zshrc"
-
-alias vps="ssh root@104.207.152.19"
-
-alias mrw="mount -o remount,rw /system"
-alias mro="mount -o remount,ro /system"
-
-alias cs="cd"
-alias wifi="sudo cat /data/misc/wifi/wpa_supplicant.conf"
+export TERM=xterm-256color

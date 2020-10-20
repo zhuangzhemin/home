@@ -1,6 +1,6 @@
 # Updates editor information when the keymap changes.
 function zle-line-init zle-keymap-select {
-PROMPT='%{$fg[cyan]%}[$(get_user_name):%~]$(git_prompt_info)$(vi_mode_prompt_info) '
+    PROMPT='%{$fg[cyan]%}[%n@%m:%~](%D %T)$(git_prompt_info)$(vi_mode_prompt_info) '
     zle reset-prompt
     zle -R
 }
@@ -54,8 +54,3 @@ function git_prompt_info() {
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[blue]%})%{$reset_color%}"
-
-function get_user_name() {
-  echo $(command whoami)
-}
-
