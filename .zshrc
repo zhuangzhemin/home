@@ -61,9 +61,6 @@ alias ec='vim ~/.zshrc'
 alias sc='source ~/.zshrc'
 stty -ixon
 
-alias vps="ssh root@67.230.184.8"
-alias android="ssh -p 8022 192.168.43.83"
-
 alias ta='tmux attach'
 alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'

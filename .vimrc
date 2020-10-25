@@ -258,8 +258,8 @@
     endif
     set showmatch                   " Show matching brackets/parenthesis
     set magic
-    nnoremap / /\v
-    vnoremap / /\v
+    "nnoremap / /\v
+    "vnoremap / /\v
     set gdefault                    " Set g switch as default option for re
     set incsearch                   " Find as you type search
     set hlsearch                    " Highlight search terms
