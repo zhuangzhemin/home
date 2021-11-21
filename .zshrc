@@ -57,13 +57,9 @@ alias du='du -h'
 alias -s htm="chrome"
 alias -s html="chrome"
 
-alias ec='vim ~/.zshrc'
-alias sc='source ~/.zshrc'
+alias ec='vim ~/.zshrc.local'
+alias sc='source ~/.zshrc.local'
 stty -ixon
-
-alias vps="ssh root@67.230.184.8"
-alias ali="ssh root@47.74.176.160"
-alias android="ssh -p 8022 192.168.43.83"
 
 alias ta='tmux attach'
 alias ts='tmux new-session -s'

@@ -65,26 +65,14 @@
 " }}}
 
 " Use bundles config {{{
-    if filereadable(expand("~/.vimrc.bundles"))
-        source ~/.vimrc.bundles
+    if filereadable(expand("~/.vimrc.plugs"))
+        source ~/.vimrc.plugs
     endif
 " }}}
 
 " General {{{
 
     set background=dark         " Assume a dark background
-
-    " Allow to trigger background
-    function! ToggleBG()
-        let s:tbg = &background
-        " Inversion
-        if s:tbg == "dark"
-            set background=light
-        else
-            set background=dark
-        endif
-    endfunction
-    noremap <leader>bg :call ToggleBG()<CR>
 
     " if !has('gui')
         "set term=$TERM          " Make arrow and other keys work
@@ -264,8 +252,8 @@
     endif
     set showmatch                   " Show matching brackets/parenthesis
     set magic
-    nnoremap / /\v
-    vnoremap / /\v
+    "nnoremap / /\v
+    "noremap / /\v
     set gdefault                    " Set g switch as default option for re
     set incsearch                   " Find as you type search
     set hlsearch                    " Highlight search terms
@@ -311,10 +299,13 @@
     "   let g:spf13_keep_trailing_whitespace = 1
     autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     autocmd FileType php,javascript,html,css,python,vim,vimwiki  set fileformat=unix
+    autocmd FileType python  setlocal foldnestmax=2 foldmethod=indent
+    autocmd FileType xml  setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType text setlocal textwidth=78
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
+    autocmd BufNewFile,BufRead *.bean,*.beancount  setlocal iskeyword+=: iskeyword+=-
     " preceding line best in a plugin but here for now.
 
     autocmd BufNewFile,BufRead *.coffee set filetype=coffee
@@ -506,13 +497,6 @@
     map zl zL
     map zh zH
 
-    " Easier formatting
-    nnoremap <silent> <leader>q gwip
-
-    " FIXME: Revert this f70be548
-    " fullscreen mode for GVIM and Terminal, need 'wmctrl' in you PATH
-    map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
-
 " }}}
 
 " Key (re)Mappings for Zhemin {{{
@@ -523,6 +507,7 @@
     nnoremap <leader>d :'a,'bd<ESC>
     nnoremap <leader>c <ESC>'av'b$y<ESC>
     nnoremap <leader>bs :browse saveas<CR>
+    nnoremap <leader>r :!python3 %<CR>
     inoremap <C-h> <Left>
     inoremap <C-j> <Down>
     inoremap <C-K> <Up>
