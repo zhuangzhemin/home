@@ -57,8 +57,8 @@ alias du='du -h'
 alias -s htm="chrome"
 alias -s html="chrome"
 
-alias ec='vim ~/.zshrc.local'
-alias sc='source ~/.zshrc.local'
+alias ec='vim ~/.zshrc'
+alias sc='source ~/.zshrc'
 stty -ixon
 
 alias ta='tmux attach'
