@@ -1,3 +1,7 @@
 alias ec='vim ~/.zshrc.local'
 alias sc='source ~/.zshrc.local'
 
+export PATH="${HOME}/.local/bin:${HOME}/.local/bin/python-3.9.2/bin:${PATH}"
+
+alias vim="nvim"
+alias vi="/usr/bin/vim"

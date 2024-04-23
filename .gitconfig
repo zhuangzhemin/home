@@ -9,6 +9,7 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	ls = ls-files
+	df = difftool
 [core]
 	editor = vim
 [diff]
