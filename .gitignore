@@ -4,6 +4,4 @@
 .vimundo/
 .zsh-update
 .zsh_history
-.local_path_alias.src
 .vimswap/
-nvim/
