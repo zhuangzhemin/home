@@ -60,6 +60,7 @@ opt.wrap = false                            -- display lines as one long line
 opt.scrolloff = 3                           -- minimum lines to keep above and below cursor
 opt.sidescrolloff = 8                       -- Columns of context
 opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
+opt.autochdir = true                        -- auto change current working directory
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
