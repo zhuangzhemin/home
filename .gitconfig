@@ -11,10 +11,12 @@
 	ls = ls-files
 	df = difftool
 [core]
-	editor = vim
+	editor = nvim
+[difftool]
+    prompt = false
 [diff]
-	tool = vimdiff
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [push]
 	default = simple
-[difftool]
-	prompt = false
