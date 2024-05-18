@@ -1,5 +1,4 @@
 return {
-
   -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -9,21 +8,18 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true,
-        typeCheckingMode = "off",
-      },
-    },
-  },
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = "workspace",
+                useLibraryCodeForTypes = true,
+                typeCheckingMode = "off",
+              },
+            },
+          },
         },
       },
     },
   },
-
 }
-
-
