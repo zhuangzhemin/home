@@ -14,10 +14,18 @@ return {
   { "saadparwaiz1/cmp_luasnip", enabled = false},
   { "L3MON4D3/LuaSnip", enabled = false},
 
-  -- disable default keymap for "s" in flash
-  { "folke/flash.nvim",
-    keys = {
-      { "s", mode = { "n", "x", "o" }, false },
-    },
-  },
+  -- disable mini
+  { "echasnovski/mini.ai", enabled = false },
+  -- { "echasnovski/mini.comment", enabled = false},
+  -- { "echasnovski/mini.pairs", enabled = false},
+
+  -- disable flash
+  { "folke/flash.nvim", enabled = false },
+
+  -- -- disable default keymap for "s" in flash
+  -- { "folke/flash.nvim",
+  --   keys = {
+  --     { "s", mode = { "n", "x", "o" }, false },
+  --   },
+  -- },
 }
