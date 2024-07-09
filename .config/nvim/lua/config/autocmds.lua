@@ -28,8 +28,8 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     vim.opt_local.iskeyword:append(":")
     vim.opt_local.iskeyword:append("-")
     vim.opt_local.filetype = "beancount"
-    -- vim.cmd("setlocal iskeyword+=:")
-    -- vim.cmd("setlocal iskeyword+=-")
+    vim.cmd("setlocal iskeyword+=:")
+    vim.cmd("setlocal iskeyword+=-")
   end,
 })
 
